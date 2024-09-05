@@ -3,7 +3,7 @@
 
 class UserValidator {
 	
-	private const EmailRegex = '/^[a-zA-Z0-9._%-]+(\+?[a-zA-Z0-9._%-]+)?@[a-zA-Z0-9_%+-]+(\.[a-zA-Z0-9_%+-]+)*\.[a-zA-Z]{2,}$/';
+    private const EmailRegex = '/^(?!\.)(?!.*\.@)[a-zA-Z0-9._%-]+(\+?[a-zA-Z0-9._%-]+)?@[a-zA-Z0-9_%+-]+(\.[a-zA-Z0-9_%+-]+)*\.[a-zA-Z]{2,}$/';
 	private const PasswordRegex = '/^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[\W_]).{8,}$/';
 
 	public function validateEmail(string $email): bool {
@@ -105,6 +105,11 @@ $testCases = [
         ['email' => 'user@domain.abcd', 'expected' => true],
         ['email' => 'user@domain.abcde', 'expected' => true],
         ['email' => 'user@domain.abcdef', 'expected' => true],
+
+        ['email' => 'a.b@example.com', 'expected' => true],
+        ['email' => '.b@example.com', 'expected' => false],
+        ['email' => 'a.@example.com', 'expected' => false],
+        ['email' => '.@example.com', 'expected' => false],
     ],
 
     'passwords' => [
