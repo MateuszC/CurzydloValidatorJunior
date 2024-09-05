@@ -4,7 +4,16 @@
 class UserValidator {
     
     public function validateEmail(string $email): bool {
-        return false;
+        $EmailRegex = '/^[a-zA-Z0-9._%-]+(\+?[a-zA-Z0-9._%-]+)?@[a-zA-Z0-9_%+-]+(\.[a-zA-Z0-9_%+-]+)*\.[a-zA-Z]{2,}$/';
+        /*
+            [a-zA-Z0-9._%-]+ - przynajmniej jeden znak litera albo cyfra albo znaki specjalne ._%-
+            (\+?[a-zA-Z0-9._%-]+)? - opcjonalnie jeden znak '+' oraz ciąg znaków jak powyżej
+            @ - dokładnie jeden znak @
+            [a-zA-Z0-9_%+-]+ - przynajmniej jeden znak litera albo cyfra albo znaki specjalne - (domena)
+            (\.[a-zA-Z0-9_%+-]+)* - subdomeny/domeny
+            \.[a-zA-Z]{2,} - conajmniej dwie litery po kropce
+        */
+        return preg_match($EmailRegex,$email) === 1;
 	}
     
     public function validatePassword(string $password): bool {
