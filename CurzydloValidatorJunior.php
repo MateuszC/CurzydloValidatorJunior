@@ -151,7 +151,7 @@ echo "<tr>
         <th>Test Passed</th>
         <th>Validation Should Be</th>
         <th>Validation Is</th>
-        <th>Text (Email or Password)</th>
+        <th>Checked Value</th>
       </tr>";
 
 $allCorrect = true;
@@ -186,7 +186,7 @@ echo "<tr>
         <th>Test Passed</th>
         <th>Validation Should Be</th>
         <th>Validation Is</th>
-        <th>Text (Email or Password)</th>
+        <th>Checked Value</th>
       </tr>";
 
 $allCorrect = true;
