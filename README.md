@@ -6,9 +6,6 @@ A PHP class that validates email addresses and passwords using regular expressio
 
 1. [About the Project](#about-the-project)
 2. [Getting Started](#getting-started)
-3. [Usage](#usage)
-4. [Contributing](#contributing)
-5. [License](#license)
 
 ## About the Project
 
