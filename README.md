@@ -33,7 +33,7 @@ Both methods return a boolean (`true` or `false`) based on whether the input mat
 
 ### Prerequisites
 
-- PHP installed on your system (version 7.0+).
+- PHP installed on your system (version 8.0+).
 
 ### Installation
 
