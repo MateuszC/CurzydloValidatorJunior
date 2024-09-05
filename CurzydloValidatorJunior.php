@@ -2,11 +2,11 @@
 
 
 class UserValidator {
-	
+    
     private const EmailRegex = '/^(?!\.)(?!.*\.@)[a-zA-Z0-9._%-]+(\+?[a-zA-Z0-9._%-]+)?@[a-zA-Z0-9_%+-]+(\.[a-zA-Z0-9_%+-]+)*\.[a-zA-Z]{2,}$/';
-	private const PasswordRegex = '/^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[\W_]).{8,}$/';
+    private const PasswordRegex = '/^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[\W_]).{8,}$/';
 
-	public function validateEmail(string $email): bool {
+    public function validateEmail(string $email): bool {
         /*
             [a-zA-Z0-9._%-]+ - przynajmniej jeden znak litera albo cyfra albo znaki specjalne ._%-
             (\+?[a-zA-Z0-9._%-]+)? - opcjonalnie jeden znak '+' oraz ciąg znaków jak powyżej
@@ -16,7 +16,7 @@ class UserValidator {
             \.[a-zA-Z]{2,} - conajmniej dwie litery po kropce
         */
         return preg_match(UserValidator::EmailRegex,$email) === 1;
-	}
+    }
 
     public function validatePassword(string $password): bool {
         /*
