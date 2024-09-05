@@ -1,6 +1,6 @@
 # CurzydloValidatorJunior.php
 
-A simple PHP class for validating email addresses and passwords. This project includes basic validation methods for emails and passwords.
+A PHP class that validates email addresses and passwords using regular expressions. The class includes robust validation for both fields, following common standards for secure and valid input.
 
 ## Table of Contents
 
@@ -12,19 +12,32 @@ A simple PHP class for validating email addresses and passwords. This project in
 
 ## About the Project
 
-The `CurzydloValidatorJunior.php` file contains a basic PHP class called `UserValidator`. It includes two methods:
+The `CurzydloValidatorJunior.php` file contains a PHP class called `UserValidator`. It includes two methods that validate emails and passwords using regular expressions.
 
-- `validateEmail($email)`: A placeholder method to validate email addresses.
-- `validatePassword($password)`: A placeholder method to validate passwords.
+### Email Validation
 
-Currently, both methods always return `false`, meaning no input is considered valid yet. The project is intended to serve as a starting point for more advanced email and password validation logic.
+The `validateEmail($email)` method checks the following:
+- The email must start with one or more alphanumeric characters or certain symbols (`._%-`).
+- Optionally, it can include a `+` followed by additional characters.
+- A valid domain must follow, including optional subdomains, and a top-level domain of at least two characters.
+
+### Password Validation
+
+The `validatePassword($password)` method checks that:
+- The password must contain at least one uppercase letter.
+- It must contain at least one lowercase letter.
+- It must contain at least one number.
+- It must contain at least one special character.
+- The total length must be at least 8 characters.
+
+Both methods return a boolean (`true` or `false`) based on whether the input matches the defined regular expression.
 
 ## Getting Started
 
 ### Prerequisites
 
 - PHP installed on your system (version 7.0+).
-  
+
 ### Installation
 
 1. Clone or download the `CurzydloValidatorJunior.php` file to your local machine.
