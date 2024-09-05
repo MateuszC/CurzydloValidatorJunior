@@ -2,13 +2,23 @@
 
 
 class UserValidator {
-
-	public function validateEmail(string $email): bool {
+    
+    public function validateEmail(string $email): bool {
         return false;
 	}
-
+    
     public function validatePassword(string $password): bool {
-        return false;
+        $PasswordRegex = '/^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[\W_]).{8,}$/';
+        /*
+            . - dowolny znak
+            .* - zero lub więcej wystąpień
+            (?=.*[A-Z]) - czy duża litera
+            (?=.*[a-z]) - czy mała litera
+            (?=.*[0-9]) - czy cyfra
+            (?=.*[\W_]) - czy znak specjalny
+            .{8,} - czy minimum 8 znaków
+        */
+        return preg_match($PasswordRegex, $password) === 1;
     }
 }
 
