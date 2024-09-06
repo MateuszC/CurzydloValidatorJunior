@@ -8,6 +8,8 @@ class UserValidator {
 
     public function validateEmail(string $email): bool {
         /*
+            (?!\.) - sprawdza czy nie ma kropki na początku
+            (?!.*\.@) - sprawdza czy nie ma kropki zaraz przed znakiem @
             [a-zA-Z0-9._%-]+ - przynajmniej jeden znak litera albo cyfra albo znaki specjalne ._%-
             (\+?[a-zA-Z0-9._%-]+)? - opcjonalnie jeden znak '+' oraz ciąg znaków jak powyżej
             @ - dokładnie jeden znak @
